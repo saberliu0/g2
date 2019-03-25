@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta content="telephone=no" name="format-detection">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+    <title>详情页</title>
+    <link rel="stylesheet" href="detail1/common.css">
+    <link rel="stylesheet" href="detail1/main.css">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/Swiper/4.5.0/css/swiper.min.css">
+    <link rel="stylesheet" href="./detail1/layer.css" id="layuicss-skinlayercss">
+    <link id="lwj-ui-css-swiper" rel="stylesheet" type="text/css" href="./detail1/swiper.css" media="all">
+    <script type="text/javascript" src="https://cdn.staticfile.org/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/Swiper/4.5.0/js/swiper.min.js"></script>
+    <script src="https://cdn.staticfile.org/clipboard.js/1.5.15/clipboard.min.js"></script>
+
+    <!--<script type="text/javascript" src="./detail1/jquery.scrollLoading-min.js"></script>-->
+
+
+
+
+</head>
+
+<body data-appid="1" data-in="1">
+<div class="header_pr header_goods ">
+    <header class="icon_header">
+        <!--<a ui-back="" class="iconfont icon-zuojiantou"></a>-->
+
+        <div class="title">
+            <div class="row-s">
+                <a anchors="anchors_info" class="col-12-4 text-center active">商品</a><a anchors="anchors_title"
+                                                                                       class="col-12-4 text-center">详情</a>
+                <a anchors="anchors_ant" class="col-12-4 text-center">推荐</a>
+            </div>
+        </div>
+    </header>
+</div>
+<!-- 购物车快捷入口 必须加在layout上面 -->
+<div class="goods_shop_cart" ui-footprint="" data-item="goodsItem" data-type="1">
+    <div class="cent row-s0">
+        <div class="goods_quan row-s">
+            <!-- <button id="htmlOnClick" onclick="clickHandler()">htmlOnClick</button>  -->
+            <!-- <button class="button" data-clipboard-text="'+id+'" data-clipboard-action="copy" type="button"> -->
+
+
+            <div id='tkl' class="row" data-clipboard-text="qqq" data-clipboard-action="copy" type="button">
+                <div class="col-12-8 money">
+                    <p align="left" style="margin-left:20px;">优惠券:<span id="coupon_info"> 0</span>元</p>
+                    <p></p>
+                    <p align="left" style="margin-left:20px;">红&nbsp&nbsp&nbsp&nbsp包:<span id="hb">0</span>元</p>
+                </div>
+                <div class="col-12-4 name">
+                    <h2><span>立即购买</span></h2>
+                </div>
+            </div>
+
+            <!--<img src="detail1/goods_quan2.png" alt="">-->
+
+            <button class="anniu" ></button>
+
+        </div>
+    </div>
+    <div class="goods_shop_cart_bg " ui-show="" data-css=".goods_shop_cart" data-active="false"></div>
+</div>
+
+
+<style>
+
+    .anniu{
+        font-size: 20px;
+        width: 100%;
+        height: 88px;
+        background-color: transparent;
+        background-image: linear-gradient(to left, rgb(250, 77, 190) 0px, rgb(251, 170, 88) 100%);
+        float:left;
+
+
+        border: 3px solid #FC4D52;
+        border-radius: 15px;
+        color: #FC4D52;
+        padding: 0.2rem 0.3rem;
+        font-style: normal;
+
+    }
+    </style>
+
+
+
+
+<div class="layout row" id="anchors_info" ui-up-app="" data-location="top" data-top="">
+    <!--banner start-->
+    <div id='tpstyle' class="swiper-container" style="width:100%;height:396px;overflow: hidden;">
+        <div class="swiper-wrapper">
+
+        </div>
+        <!-- 如果需要分页器 -->
+        <div class="swiper-pagination"></div>
+
+        <!-- 如果需要导航按钮 -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+    </div>
+    <!--banner end-->
+
+    <div class="goods_info">
+        <h1 id="biaoti" class="col-mar"></h1>
+        <div class="info row-s col-mar">
+            <div id='qhprice' class="col-12-6 text-left col-money">券后价</div>
+            <div id='yxiaoliang' class="col-12-6 text-right"> 已售万</div>
+            <div id='yprice' class="col-12-6 text-left col-888"></div>
+            <div class="col-12-6 text-right auth">
+                <span ><i class="iconfont icon-detail_icon col-money"></i><span id='kuaidi'>包邮</span></span>
+
+                <!--<span><i class="iconfont icon-detail_icon col-money"></i>运费险</span>-->
+            </div>
+        </div>
+        <div id="xq" class="goods_desc col-mar col-888"></div>
+    </div>
+    <div class="hr"></div>
+    <div class="goods_shop">
+        <br/><br/><br/><br/><br/>
+        <div class="goods_reco" data-goodsid="574917178603">
+            <h3>宝贝详情</h3>
+            <style>img {
+                width: 100%;
+                height: auto
+            }</style>
+            <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+            <div id="img"></div>
+        </div>
+    </div>
+</div>
+<!--<div class="ov_h"><a ui-weixin-open="" id="weiboOpen"></a></div>-->
+
+
+<script>
+    var apiurl='https://service-nsjc68qw-1251193929.ap-guangzhou.apigateway.myqcloud.com/test/detail1api';
+
+    var geturl = location.search;
+    if (geturl == '') {
+        geturl = '?id=521031921743';
+    }
+
+    //tkl.data-clipboard-text='aaaa';
+
+
+    clipboard = new Clipboard('.row');
+    clipboard.on('success', function (e) {
+        document.getElementById("tishi").style.display = "";//显示
+
+    });
+    clipboard.on('error', function (e) {
+        //loadHtml()
+    });
+
+
+    //document.getElementsByTagName("title")[0].innerText = '家用纱窗纱网自粘型非简易磁性门帘自装魔术贴防蚊子沙窗帘可拆卸_大淘券';
+    //biaoti.innerHTML = '<span>天猫</span>隐形自粘型防蚊防虫纱窗纱网打孔可拆卸0';
+    //xq.innerHTML = "爆款返场，性价比超好，自由裁剪含魔术贴，简单方便，防蚊效果好，可自由裁剪，给家人更安静更健康的夜间环境，免除蚊虫打扰，睡得更安心！";
+    function dj(txt) {
+        alert(txt);
+    }
+
+    function gb() {
+        document.getElementById("tishi").style.display="none";//隐藏
+    }
+
+    baobeixinagqing(geturl);
+    function baobeixinagqing(id) { ///宝贝详情
+
+        (function(a){a.fn.scrollLoading=function(b){var c={attr:"data-url",container:a(window),callback:a.noop};var d=a.extend({},c,b||{});d.cache=[];a(this).each(function(){var h=this.nodeName.toLowerCase(),g=a(this).attr(d.attr);var i={obj:a(this),tag:h,url:g};d.cache.push(i)});var f=function(g){if(a.isFunction(d.callback)){d.callback.call(g.get(0))}};var e=function(){var g=d.container.height();if(d.container.get(0)===window){contop=a(window).scrollTop()}else{contop=d.container.offset().top}a.each(d.cache,function(m,n){var p=n.obj,j=n.tag,k=n.url,l,h;if(p){l=p.offset().top-contop,h=l+p.height();if((l>=0&&l<g)||(h>0&&h<=g)){if(k){if(j==="img"){f(p.attr("src",k))}else{p.load(k,{},function(){f(p)})}}else{f(p)}n.obj=null}}})};e();d.container.bind("scroll",e)}})(jQuery);
+
+        $(document).ready(function () {
+            $.ajax({
+                url: 'https://hws.m.taobao.com/cache/desc/5.0' + geturl,
+                type: 'get',
+                dataType: 'jsonp',
+                contentType: "application/json",
+                async: true, //异步请求
+                cache: false,
+                //执行成功的回调函数
+                success: function (data) {
+                    var str2 = "";
+                    var regexp = /\<(.+?)\>/g;
+                    $.each(data.wdescContent.pages, function (i, val) {
+                        //str += "<img onclick=\"return false\" src=\"https:"+val.replace(regexp,'')+"\"></img>";
+                        if(val.indexOf(".jpg") != -1 ){
+                            str2 += '<img class="lazy0" data-url="' + val.replace(regexp, '') + '_.webp" width="640" height="480" alt=""/>';
+                        }
+
+                    });
+                    $('#img').html(str2);
+                    $(".lazy0").scrollLoading();
+                },
+                //执行失败或错误的回调函数
+                error: function (data) {
+                    alert(data);
+                }
+            });
+        });
+    }
+
+    // swiper
+    window.onload = function () {
+        url = apiurl + geturl;
+        $.get(url, function (data) {
+            //alert(data);
+            var imgData = eval('(' + data + ')');
+
+            biaoti.innerHTML = imgData.title;
+            yprice.innerHTML = ' 原价 ¥' + imgData.priceText;
+            coupon_info.innerHTML = ' '+ imgData.coupon_info;//优惠券
+            hb.innerHTML = ' '+ imgData.hb;//红包
+
+
+
+            qhprice.innerHTML = '券后价 <span><i>¥</i>' + imgData.price + '</span>';
+            yxiaoliang.innerHTML = '已售' + imgData.sellCount + '件';
+            kuaidi.innerHTML = imgData.postage;
+            xq.innerHTML = imgData.title;
+
+
+
+            document.getElementById("tkl").setAttribute('data-clipboard-text', imgData.tkl);
+
+            imgData = imgData.img;
+            var str = '';
+            for (var i = 0; i < imgData.length; i++) {
+                str += '<div class="swiper-slide">'
+                    + '<img data-src="' + imgData[i] + '" class="swiper-lazy">'
+                    + '<div class="swiper-lazy-preloader"></div></div>'
+
+            }
+            // console.log(str);return;
+            $('.swiper-wrapper').html(str);
+            var mySwiper = new Swiper('.swiper-container', {
+                lazy: {
+                    loadOnTransitionStart: true,
+                },
+                loop: true, // 循环模式选项
+                pagination: { // 如果需要分页器
+                    el: '.swiper-pagination',
+                    clickable: true,
+                    renderBullet: function (index, className) {
+                        return '<span class="' + className + '">' + (index + 1) + '</span>';
+                    },
+                },
+                navigation: { // 如果需要前进后退按钮
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+            })
+        })
+    };
+    //////////
+
+    //document.getElementById('tpstyle').style.height="100%";//修改图片高度
+</script>
+
+
+<div id="tishi" style="display:none;">
+    <div class="layui-layer-move"></div>
+    <div class="layui-layer-shade" id="layui-layer-shade2" times="2"
+         style="z-index:19891015; background-color:#000; opacity:0.5; filter:alpha(opacity=50);"></div>
+    <div class="layui-layer layui-layer-page buy-copy buy-taokoulin layer-anim" id="layui-layer2" type="page" times="2"
+         showtime="0" contype="string" style="z-index: 19891016; top: 110px; left: 27px;">
+        <div id="" class="layui-layer-content">
+            <div class="buy-box"><a href="javascript:;" class="close buy-icon"></a>
+                <div class="buy-box-tab buy-box-tab-bg">复制成功</div>
+                <div class="buy-box-center">
+                    <div class="code-cent">
+                        <div class="cente-text">
+                            <div>
+                                <p class="textarea" id="codeCopy">
+                                    <H>复制成功</H><br/>
+                                    <H>请返回手机桌面</H><br/>
+                                    <H>打开手机淘宝</H><br/>
+                                    <H>弹出提示后点击打开,领券优惠券</H><br/>
+                                    <H>和平时购物一样就可以了</H><br/>
+                                    <H>==================</H><br/>
+                                    <H>确认收货后,公众号发放红包</H><br/>
+                                    <H>付款金额不一样,红包也不一样</H><br/>
+                                    <H>红包金额根据付款金额提升</H><br/>
+                                    <H>付款金额越大,红包越大</H><br/>
+                                </p>
+                            </div>
+                        </div>
+                        <p class="text">复制成功</p><a href="javascript:void(0);" onclick="gb()" class="buy-btn-copy">关闭</a>
+                        <!--<textarea id="codeCopyVal" style="display:none">厚湿两用】</textarea></div>-->
+                        <span class="layui-layer-setwin"></span><span class="layui-layer-resize"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+
+</html>

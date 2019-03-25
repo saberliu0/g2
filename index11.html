@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>推荐商品</title>
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport"/>
+    <meta content="yes" name="apple-mobile-web-app-capable"/>
+    <meta content="black" name="apple-mobile-web-app-status-bar-style"/>
+    <meta content="telephone=no" name="format-detection"/>
+    <link href="css/style.css" rel="stylesheet" type="text/css"/>
+    <!--<script type="text/javascript" src="https://cdn.staticfile.org/jquery/3.3.1/jquery.js"></script>
+    <script type="text/javascript" src="https://cdn.staticfile.org/jquery/3.3.1/jquery.min.js"></script>-->
+    <!--<script type="text/javascript" src="js/tab.js"></script>  切换页面用到-->
+
+</head>
+<body>
+
+
+<section class="aui-flexView">
+    <header class="aui-navBar aui-navBar-fixed">
+        <!--<a href="javascript:;" class="aui-navBar-item">
+            <i class="icon icon-return"></i>
+        </a>-->
+        <div class="aui-center">
+            <span class="aui-center-title">查找优惠券</span>
+        </div>
+        <!--<a href="javascript:;" class="aui-navBar-item">
+            <i class="icon icon-more"></i>
+        </a>-->
+    </header>
+
+    <section class="aui-scrollView">
+        <div class="aui-tab" data-ydui-tab>
+            <!--切换页面用到  <ul class="tab-nav">
+                <li class="tab-nav-item tab-active">
+                      <a href="javascript:;">
+                          <span>推荐</span>
+                      </a>
+                  </li>
+                  <li class="tab-nav-item">
+                      <a href="javascript:;">
+                          <span>搜索</span>
+                      </a>
+                  </li>
+                  <li class="tab-nav-item">
+                      <a href="javascript:;">
+                          <span>优惠商品</span>
+                      </a>
+                  </li>
+                  <li class="tab-nav-item">
+                      <a href="javascript:;">
+                          <span>推荐1</span>
+                      </a>
+                  </li>
+                  <li class="tab-nav-item">
+                      <a href="javascript:;">
+                          <span>推荐2</span>
+                      </a>
+                  </li>
+                  <li class="tab-nav-item">
+                      <a href="javascript:;">
+                          <span>推荐3</span>
+                      </a>
+                  </li>
+            </ul>切换页面用到-->
+
+
+            <div class="divHeight"></div>
+
+            <div id="quan" class="tab-panel">
+                <div class="tab-panel-item tab-active">
+
+
+                    <div class="aui-title">
+                        <h1>您查找的商品</h1>
+                    </div>
+                    <div class="aui-product">
+                        <div id="czdiv"></div>
+                    </div>
+                    <div style=" text-align:center;font-weight:900">上面的商品是你发送查找的商品</div>
+                    <div class="divHeight"></div>
+
+                    <!--搜索商品-->
+                    <div class="aui-title">
+                        <h3 style="text-align:center;">搜索商品</h3>
+                        搜索商品<input type="text" name="lastname">
+                    </div>
+                    <div class="aui-product">
+                        <div id="ssdiv"></div>
+                    </div>
+                    <div class="divHeight"></div>
+                    <!--搜索商品-->
+
+
+                    <div style=" text-align:center;font-weight: 900">下面的商品是推荐的同一款商品</div>
+
+                    <div class="aui-title">
+                        <h1>同款商品</h1>
+                    </div>
+                    <div class="aui-product">
+                        <div id="tkdiv" class="tkdiv"></div>
+                    </div>
+
+                    <div class="divHeight"></div>
+
+
+                    <!--<div class="aui-title">
+                        <h1>同类推荐</h1>
+                    </div>
+                    <div class="aui-product">
+                        <div id="tldiv"></div>
+
+                    </div>
+                    <div class="divHeight"></div>-->
+                </div>
+
+
+
+                <!---搜索商品-切换页面用到
+
+                <div class="tab-panel-item">
+                    <div class="aui-title">
+                        <h1>搜索商品</h1>
+                    </div>
+                    <div class="aui-product">
+                        <div id="baoyoudiv"></div>
+                    </div>
+                    <div class="divHeight"></div>
+                    9999999999
+                </div>-->
+
+
+
+
+                <!--优惠商品
+                <div class="tab-panel-item">
+                    <div class="aui-title">
+                        <h1>优惠商品</h1>
+                    </div>
+                    <div class="aui-product">
+
+                        <div id="youhuidiv"></div>
+                    </div>
+                    <div class="divHeight"></div>
+                </div>
+
+
+                <!--推荐1--
+                <div class="tab-panel-item">
+                    <div class="aui-title">
+                        <h1>推荐1</h1>
+                    </div>
+                    <div class="aui-product">
+                        <div id="tj1div"></div>
+
+                    </div>
+                    <div class="divHeight"></div>
+                </div>
+
+                <!--推荐1
+                <div class="tab-panel-item">
+                    <div class="aui-title">
+                        <h1>推荐2</h1>
+                    </div>
+                    <div class="aui-product">
+
+                        <div id="tj2div"></div>
+                    </div>
+                    <div class="divHeight"></div>
+                </div>
+
+                <!--推荐1-
+                <div class="tab-panel-item">
+                    <div class="aui-title">
+                        <h1>推荐3</h1>
+                    </div>
+                    <div class="aui-product">
+
+                        <div id="tj3div"></div>
+                    </div>
+                    <div class="divHeight"></div>
+                </div>
+                -->
+
+            </div>
+        </div>
+    </section>
+</section>
+
+<script language="javascript">
+    var geturl=location.search;
+    if (geturl == '') {
+        geturl = '?id=521031921743';
+    }
+
+
+
+    http('https://tblm.leizhoutc.com/tblm/index/indexapi.php'+geturl);
+
+    //http('https://service-nsjc68qw-1251193929.ap-guangzhou.apigateway.myqcloud.com/test/123');
+
+    function GetData(response) {
+         json = eval('(' + response + ')');
+         id= json.cz.id;
+         biaoti = json.cz.title; //商品标题
+         biaoti = biaoti.substring(0, 26)+'..';
+         tuijian = '查找';//图片左上角文字
+         yhq = json.cz.coupon_info; //优惠券额度
+         hongbao = json.cz.hb;//红包额度
+         jiage = json.cz.price;//商品价格
+         img = json.cz.pic_url;
+
+
+         cztxt = '<a href="./detail1.html?id='+id+'" class="aui-flex b-line">\n' +
+            '<div class="aui-product-img">\n' +
+            '<img src="' + img + '" alt="">\n' +
+            '<span class="aui-fl-tag">' + tuijian + '</span>\n' +
+            '</div>\n' +
+            '<div class="aui-flex-box">\n' +
+            '<h2>' + biaoti + '</h2>\n' +
+            '<span>\n' +
+            '<em>优惠券:' + yhq + '元</em>\n' +
+            '<em>红包:' + hongbao + '元</em>\n' +
+            '</span>\n' +
+            '<h3>' + jiage + '<em>元</em></h3>\n' +
+            '</div>\n' +
+            '<button class="button" >购买</button><div class="aui-arrow-text">您查找的商品</div>\n' +
+            '</a>';
+        czdiv.innerHTML = cztxt;
+
+
+
+        tki=json.tk.length;
+        tktxt='';
+        for( i = 0; i < tki; i++){
+            id= json.tk[i].id;
+            biaoti = json.tk[i].title;//
+            biaoti = biaoti.substring(0, 26)+'..';
+            tuijian = '同款';//图片左上角文字
+            yhq = json.tk[i].coupon_info //
+            hongbao = json.tk[i].hb;//
+            jiage = json.tk[i].price;//
+            img2 = json.tk[i].pic_url+'_.webp';
+
+            txt = '<a href="./detail1.html'+geturl+'&id='+id+'" class="aui-flex b-line">\n' +
+                '<div class="aui-product-img">\n' +
+                '<img class="lazyqq" src="' + img2 + '"  width="100" height="100" />\n' +
+                '<span class="aui-fl-tag">' + tuijian + '</span>\n' +
+                '</div>\n' +
+                '<div class="aui-flex-box">\n' +
+                '<h2>' + biaoti + '</h2>\n' +
+                '<span>\n' +
+                '<em>优惠券:' + yhq + '元</em>\n' +
+                '<em>红包:' + hongbao + '元</em>\n' +
+                '</span>\n' +
+                '<h3>' + jiage + '<em>元</em></h3>\n' +
+                '</div>\n' +
+                '<button class="button" >购买</button><div class="aui-arrow-text">同款商品</div>\n' +
+                '</a>';
+            tktxt=tktxt+txt;
+        }
+        tkdiv.innerHTML = tktxt;
+
+
+       // $('#tkdiv').html(tktxt);
+       // $(".lazyqq").scrollLoading();
+
+
+
+       /* tli=json.tl.length;
+        tltxt='';
+        for( i = 0; i < tli; i++){
+            id= json.tl[i].id;
+            biaoti = json.tl[i].title //商品标题
+            tuijian = '同类';//图片左上角文字
+            yhq = json.tl[i].coupon_info //优惠券额度
+            hongbao = json.tl[i].coupon_info;//红包额度
+            jiage = json.tl[i].price;//商品价格
+            img = json.tl[i].pic_url;
+
+            txt = '<a href="javascript:;" class="aui-flex b-line">\n' +
+                '<div class="aui-product-img">\n' +
+                '<img src="' + img + '" alt="">\n' +
+                '<span class="aui-fl-tag">' + tuijian + '</span>\n' +
+                '</div>\n' +
+                '<div class="aui-flex-box">\n' +
+                '<h2>' + biaoti + '</h2>\n' +
+                '<span>\n' +
+                '<em>优惠券:' + yhq + '元</em>\n' +
+                '<em>红包:' + hongbao + '元</em>\n' +
+                '</span>\n' +
+                '<h3>' + jiage + '<em>元</em></h3>\n' +
+                '</div>\n' +
+                '<button class="button" type="button" onclick="dj(\'' + id + '\')">购买</button><div class="aui-arrow-text">同款商品</div>\n' +
+                '</a>';
+            tltxt=tltxt+txt;
+        }
+        tldiv.innerHTML = tltxt;
+        */
+
+
+
+
+
+
+
+        /*baoyoudiv.innerHTML = cztxt + cztxt + cztxt;
+        youhuidiv.innerHTML = cztxt + cztxt + cztxt;
+        tj1div.innerHTML = cztxt + cztxt + cztxt;
+        tj2div.innerHTML = cztxt + cztxt + cztxt;
+        tj3div.innerHTML = cztxt + cztxt + cztxt;*/
+    }
+
+    function http(url) {
+         xmlhttp = new XMLHttpRequest();
+        xmlhttp.open("GET", url);
+        xmlhttp.onreadystatechange = callback;
+        xmlhttp.send();
+
+        function callback() {
+            if (xmlhttp.readyState == 4) {
+                if (xmlhttp.status == 200) {
+                     response = xmlhttp.responseText;
+                    GetData(response)
+
+                }
+            }
+        }
+
+    }
+</script>
+
+<!--<a href="javascript:;" class="aui-flex b-line">
+                                <div class="aui-product-img">
+                                    <img src="images/ad-001.png" alt="">
+                                    <span class="aui-fl-tag">查找的商品</span>
+                                </div>
+                                <div class="aui-flex-box">
+                                    <h2>商品标题</h2>
+                                    <!--<p>商品标题2</p>-->
+<!--<span>
+    <em>优惠券:100元</em>
+    <em>红包:100元</em>
+</span>
+<h3>50.00<em>元</em></h3>
+</div>
+<div class="aui-arrow-text">您查找的商品</div>
+</a>-->
+</body>
+</html>
